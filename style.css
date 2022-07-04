@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+:root {
+    /* Linear gradient is for the storage bar */
+    --system-bar: linear-gradient(90deg,hsl(6, 100%, 80%), hsl(335, 100%, 65%), var(--very-dark-blue) 80%);
+    
+    /* Neutral colors */
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url('./images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: center;
+
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--very-dark-blue);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.storage-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    gap: 30px
+}
+
+.fylo {
+    background-color: var(--dark-blue);
+    width: 340px;
+    padding: 50px 120px 50px 20px;
+    border-radius: 8px 90px 8px 8px;
+}
+
+.icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.icons img {
+    /* width: 100%; */
+    vertical-align: bottom;
+}
+
+.img-box {
+    background-color: var(--very-dark-blue);
+    padding: 18px;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-bar {
+    margin-top: 50px;
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+    color: #fff;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+.status-bar p:first-child {
+    margin-bottom: 10px;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.status-bar .storage-size {
+    font-weight: 700;
+}
+
+/* Centering the items in Total Storage */
+.total-storage {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-storage p {
+    opacity: 0.6;
+    font-weight: 700;
+}
+
+.big-font {
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.small-font {
+    color: var(--grayish-blue);
+    vertical-align: bottom;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: var(--very-dark-blue);
+}
+
+/* Styling the input range */
+input[type=range] {
+    width: 100%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: var(--system-bar);
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+}
+
+/* Styling the POP-UP Display */
+/* Desktop Display */
+.pop-up-display {
+    display: none;
+    position: absolute;
+    top: -55px;
+    right: 72px;
+    transform: translate(10%, 50%);
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-display:before {
+    content: '';
+    position: absolute;
+    bottom: -32px;
+    right: 3px;
+    background-color: var(--dark-blue);
+    transform: rotate(45deg);
+    width: 30px;
+    height: 25px;
+    z-index: 1;
+}
+
+.pop-up-display:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    background-color: #fff;
+    /* background-color: tomato; */
+    width: 20px;
+    height: 30px;
+    /* border-bottom-left-radius: 50px; */
+    /* border-top-left-radius: 5px; */
+}
+
+
+@media screen and (max-width: 620px) {
+
+    body {
+        background-image: url('./images/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .storage-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .status-bar {
+        margin-top: 20px;
+        max-width: 350px;
+    }
+
+    /* Styling the POP-UP Display */
+    /* Mobil Display */
+    .pop-up-display {
+        position: absolute;
+        top: 120px;
+        left: 50px;
+        transform: translate(10%, 50%);
+        color: #000;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pop-up-display::before {
+        width: 0;
+        height: 0;
+    }
+
+    .pop-up-display::after {
+        width: 0;
+        height: 0;
+    }
+
+}
+
+
+/* Set it to display of none to avoid ruining the design */
+.attribution { 
+    display: none;
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
